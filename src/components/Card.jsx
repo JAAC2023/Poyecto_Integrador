@@ -1,13 +1,19 @@
-export default function Card({id, name, status, species, gender, origin, image, onClose}) {
+import { NavLink } from "react-router-dom";
+
+export default function Card({id, name, image, onClose}) {
    return (
       <div id={id}>
-         <button onClick={()=>onClose(id)}>X</button>
+         
+         <button onClick={()=> onClose(id)}>X</button>,
+
+         <NavLink to={`/detail/${id}`}>
          <h2>{name}</h2>
-         <h2>{status}</h2>
-         <h2>{species}</h2>
-         <h2>{gender}</h2>
-         <h2>{origin}</h2>
+         </NavLink>,
+
+         <NavLink to={`/detail/${id}`}>
          <img src={image} alt='' />
+         </NavLink>
+
       </div>
    );
 }

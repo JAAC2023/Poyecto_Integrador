@@ -7,6 +7,7 @@ import Cards from './components/Cards.jsx';
 import About from './components/About';
 import Detail from './components/Detail';
 import Form from './components/Form';
+import Favorites from './components/Favorites.jsx';
 
 const EMAIL = "jaac16@live.com";
 const PASSWORD = "123456";
@@ -20,7 +21,9 @@ function App() {
    let navigate = useNavigate();
 
    useEffect(() => {
+      // eslint-disable-next-line
       !access && navigate("/");
+      // eslint-disable-next-line
    }, [access]);
 
    function onSearch(id, string="all") {
@@ -57,6 +60,7 @@ function App() {
          {location.pathname !== "/" && <Nav onSearch={onSearch} />}
 
          <Routes>
+            <Route path='/favorites' element={<Favorites></Favorites>} />
             <Route path='/' element={<Form login={login}/>}/>
             <Route path="/home" element={<Cards characters={characters} onClose={onClose}/>} />
             <Route path="/about" element={<About/>} />

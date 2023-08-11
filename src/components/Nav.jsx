@@ -5,6 +5,10 @@ export default function Nav ({onSearch}){
 
     return (
         <div>
+            <NavLink to="/favorites">
+            <button>Favorites</button>
+            </NavLink>
+
             <NavLink to="/home">
             <button>Home</button>
             </NavLink>

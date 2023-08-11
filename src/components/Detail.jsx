@@ -5,7 +5,6 @@ import CardDetail from "./CardDetail";
 export default function Detail({characters, onSearch}) {
 
     const {id} = useParams();
-    console.log (id)
 
     // useEffect(()=>{
     //     return () => {id && onSearch(id)}

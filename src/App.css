@@ -1,4 +1,10 @@
 .App {
    text-align: center;
-   background-color: greenyellow;
+   display: flex;
+   background-image: url(../src/img/R.jpeg);
+   background-position: center, center;
+   background-repeat: no-repeat;
+   background-size:cover;
+   height: 100vh;
+   
 }

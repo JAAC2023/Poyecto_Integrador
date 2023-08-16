@@ -9,27 +9,16 @@ export default function validation({ email, password }) {
         return numero >= 0 && numero <= 9;
         });
     
-    console.log(passwordArray)
-    
-    if (!regexEmail.test(email)) {
-        error.email = "Debe ser un email valido";
-    } else {error.email = "correcto";}
-    
-    if (!email) {
-        error.email = "Este campo no puede estar vacio";
-    }
-    if (email.length > 35) {
-        error.email = "Debe tener menos de 35 caracteres";
-    }
-    
-    
-    
-    if (password.length < 6 || password.length > 10) {
-        error.password = "Debe tener una longitud entre 6 y 10 caracteres";
-    } else {if (hayNumeroDel0Al9) {
-                error.password = "correcto"
-            } else {error.password = "Debe contener al menos un numero"}
-        }
+    if (!regexEmail.test(email)) error.email = "Debe ser un email valido";
+    else error.email = "correcto";
 
+    if (!email)error.email = "Este campo no puede estar vacio";
+
+    if (email.length > 35) error.email = "Debe tener menos de 35 caracteres";
+
+    if (password.length < 6 || password.length > 10) error.password = "Debe tener una longitud entre 6 y 10 caracteres";
+    else if (hayNumeroDel0Al9) error.password = "correcto";
+            else error.password = "Debe contener al menos un numero";
+        
     return error;
 }

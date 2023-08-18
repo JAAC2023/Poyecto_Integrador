@@ -1,7 +1,9 @@
+import styles from "../Form/Form.module.css"
 import { useState } from "react";
 import validation from "../../utils/validation";
 
 export default function Form({ login }) {
+    
     const [userData, setUserData] = useState({
         email: "",
         password: "",
@@ -9,10 +11,8 @@ export default function Form({ login }) {
     const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
-        // name -> email password
         const { name, value } = event.target;
         setUserData({ ...userData, [name]: value });
-
         setErrors(validation({ ...userData, [name]: value }));
     };
 
@@ -23,27 +23,30 @@ export default function Form({ login }) {
 
     return (
         <form onSubmit={handleSubmit}>
-        <div>
-            <label>Email</label>
-            <input
-            type="mail"
-            onChange={handleChange}
-            value={userData.email}
-            name="email"
-            />
-            {errors.email ? <p>{errors.email}</p> : <p></p>}
-        </div>
-        <div>
-            <label>Password</label>
-            <input
-            type="password"
-            onChange={handleChange}
-            value={userData.password}
-            name="password"
-            />
-            {errors.password ? <p>{errors.password}</p> : <p></p>}
-        </div>
-        <button type="submit">Submit</button>
+            <div>
+                <h className={styles.signin}>SIGN IN</h>
+                <label className={styles.labelEmail}>Email</label>
+                <input
+                    className={styles.email}
+                    type="email"
+                    onChange={handleChange}
+                    value={userData.email}
+                    name="email"
+                />
+                {errors.email ? <p className={styles.error_Email}>{errors.email}</p> : <p>...</p>}
+            </div>
+            <div>
+                <label className={styles.labelPassword}>Password</label>
+                <input
+                    className={styles.password}
+                    type="password"
+                    onChange={handleChange}
+                    value={userData.password}
+                    name="password"
+                />
+                {errors.password ? <p className={styles.error_Email} >{errors.password}</p> : <p>...</p>}
+            </div>
+            <button className={styles.submit} type="submit">LOGIN</button>
         </form>
     );
 }

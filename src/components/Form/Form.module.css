@@ -1,0 +1,104 @@
+@font-face {
+    font-family: RickyMorty;
+    src: url('../../../Fuente_letra/get_schwifty.ttf');
+}
+
+.signin{
+color: rgb(255, 255, 255);
+position: relative;
+top: 20mm;
+left: 155mm;
+font-family: RickyMorty;
+font-size: 50px;
+}
+.email{
+    text-align: center;
+    border-color: greenyellow;
+    border-style: double;
+    border-radius: 10mm;
+    font-size: 25px;
+    font-family: monospace;
+    position: relative;
+    top:60mm;
+    left: 47mm;
+    padding: 10px;
+    width: 25%;
+    background-color:rgb(255, 255, 255);
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 10px 1px greenyellow;
+}
+
+.password{
+    text-align: center;
+    border-color: greenyellow;
+    border-style: double;
+    border-radius: 10mm;
+    font-size: 25px;
+    font-family: monospace;
+    position: relative;
+    top: 60mm;
+    left: 70mm;
+    padding: 10px;
+    width: 25%;
+    background-color:rgb(255, 255, 255);
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 10px 1px greenyellow;
+}
+
+
+.labelEmail{
+    letter-spacing: 1cqb;
+    font-family: RickyMorty;
+    color:greenyellow;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0),  1px 1px 10px greenyellow;
+    font-size: 40px;
+    position: relative;
+    top: 61mm;
+    left: 30mm;
+}
+
+.labelPassword{
+    letter-spacing: 1cqb;
+    font-family:RickyMorty ;
+    color:greenyellow;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0),  1px 1px 10px greenyellow;
+    font-size: 40px;
+    position: relative;
+    top: 61mm;
+    left: 55mm;
+}
+
+.submit{
+    position: relative;
+    top: 60mm;
+    left: 122mm;
+    font-family: RickyMorty;
+    width: 27%;
+
+    background-color: rgb(3, 170, 3);
+    border: 2px solid greenyellow;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 30px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.submit:hover {
+    background-color: greenyellow;
+    box-shadow: 1px 1px 10px 1px greenyellow;
+}
+
+.submit:active {
+    background-color: green;
+}
+
+.error_Email{
+    text-align: left;
+    color: white;
+    position: relative;
+    top: 50mm;
+    left: 130mm;
+}

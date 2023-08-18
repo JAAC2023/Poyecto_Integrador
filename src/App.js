@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
@@ -13,10 +13,11 @@ const EMAIL = "jaac16@live.com";
 const PASSWORD = "123456";
 
 function App() {
+
+   const location = useLocation();
+   const navigate = useNavigate(); 
    const [characters, setCharacters] = useState([]);
    const [access, setAccess] = useState(false);
-   let location = useLocation();
-   let navigate = useNavigate(); 
 
    useEffect(() => {
       // eslint-disable-next-line
@@ -25,21 +26,16 @@ function App() {
    }, [access]);
 
    function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
-         ({ data }) => {
-         if (data.name) {
-            setCharacters([...characters, data]);
-         } else {
-            window.alert("¡Por favor, ingresa una ID!");
-         }
+      axios(`https://rickandmortyapi.com/api/character/${id}`)
+      .then(({data}) => {
+         if (data.name) setCharacters([...characters, data]);
+         else window.alert("¡Por favor, ingresa una ID!");
          }
       );
    }
 
    function onClose(id) {
-      const characterFilter = characters.filter(
-         (character) => character.id !== Number(id)
-      );
+      const characterFilter = characters.filter((character) => character.id !== Number(id));
       setCharacters(characterFilter);
    }
 
@@ -51,23 +47,22 @@ function App() {
          window.alert("Datos incorrectos, el email o la contraseña no coinciden");
       }
    }
+//______________________Estilos____________________________
+   let estilos = styles.login
 
+   if (location.pathname !== '/') {estilos = styles.app}
+//_________________________________________________________
+   
    return (
-      <div className="App">
+      <div className={estilos}>
          {location.pathname !== "/" && <Nav onSearch={onSearch} />}
 
          <Routes>
-         <Route path="/favorites" element={<Favorites></Favorites>} />
-         <Route path="/" element={<Form login={login} />} />
-         <Route
-            path="/home"
-            element={<Cards characters={characters} onClose={onClose} />}
-         />
-         <Route path="/about" element={<About />} />
-         <Route
-            path="/detail/:id"
-            element={<Detail characters={characters} onSearch={onSearch} />}
-         />
+            <Route path="/about" element={<About />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/" element={<Form login={login} />} />
+            <Route path="/detail/:id" element={<Detail characters={characters}/>}/>
+            <Route path="/home" element={<Cards characters={characters} onClose={onClose} />}/>
          </Routes>
       </div>
    );

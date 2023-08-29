@@ -1,0 +1,117 @@
+@font-face {
+    font-family: RickyMorty;
+    src: url('../../../Fuente_letra/get_schwifty.ttf');
+}
+
+.form{
+    position: relative;
+    background-position: center;
+}
+
+.signin{
+    color: rgb(255, 255, 255);
+    position: relative;
+    top: 15mm;
+    left: 121mm;
+    font-family: RickyMorty;
+    font-size: 50px;
+}
+.email{
+    text-align: center;
+    border-color: greenyellow;
+    border-style: double;
+    border-radius: 10mm;
+    font-size: 25px;
+    font-family: monospace;
+    position: relative;
+    top: 50mm;
+    left: 16mm;
+    padding: 10px;
+    width: 25%;
+    background-color:rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px 1px greenyellow;
+}
+
+.password{
+    text-align: center;
+    border-color: greenyellow;
+    border-style: double;
+    border-radius: 10mm;
+    font-size: 25px;
+    font-family: monospace;
+    position: relative;
+    top: 70mm;
+    left: 40mm;
+    padding: 10px;
+    width: 25%;
+    background-color:rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px 1px greenyellow;
+}
+
+
+.labelEmail{
+    letter-spacing: 1cqb;
+    font-family: RickyMorty;
+    color:greenyellow;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0),  1px 1px 10px greenyellow;
+    font-size: 40px;
+    position: relative;
+    top: 51mm;
+    left: 10mm;
+}
+
+.labelPassword{
+    letter-spacing: 1cqb;
+    font-family:RickyMorty ;
+    color:greenyellow;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0),  1px 1px 10px greenyellow;
+    font-size: 40px;
+    position: relative;
+    top: 71mm;
+    left: 35mm;
+}
+
+.submit{
+    position: relative;
+    top: 95mm;
+    left: 92mm;
+    font-family: RickyMorty;
+    width: 27%;
+    background-color: rgb(3, 170, 3);
+    border: 3px solid greenyellow;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 30px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    
+}
+
+.submit:hover {
+    background-color: greenyellow;
+    box-shadow: 1px 1px 10px 1px greenyellow;
+}
+
+.submit:active {
+    background-color: green;
+}
+
+.error_Email{
+    display: inline;
+    text-align: left;
+    color: white;
+    position: relative;
+    top: 60mm;
+    right: 77mm;
+}
+
+.error_Pass{
+    display: inline;
+    text-align: left;
+    color: white;
+    position: relative;
+    top: 81mm;
+    right: 53mm;
+}

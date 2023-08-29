@@ -1,0 +1,17 @@
+
+.app {
+   
+   background-image: url(../src/img/R.jpeg);
+   background-position: center, center;
+   background-repeat: no-repeat;
+   background-size:cover;
+   height: 100vh;
+}
+
+.login {
+   background-image: url(../src/img/fondo-login.jpg);
+   background-position: center, center;
+   background-repeat: no-repeat;
+   background-size:cover;
+   height: 100vh;
+}

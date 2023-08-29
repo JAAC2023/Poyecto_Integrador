@@ -1,0 +1,122 @@
+@font-face {
+    font-family: RickyMorty;
+    src: url('../../../Fuente_letra/get_schwifty.ttf');
+}
+
+.nav{
+    text-align: center;
+    margin: 0px 50px 0px 50px;
+}
+
+.boton_fav{
+    position: relative;
+    right: 520px;
+    top: 24px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: rgb(21, 255, 0);
+    cursor: pointer;
+    font-family: cursive;
+    letter-spacing: 1px;
+    padding: 5px 15px 6px;
+    text-align: center;
+    transition: all 250ms;
+    border-color: rgb(21, 255, 0);
+    box-shadow: 0px 0px 5px 0px rgb(21, 255, 0);
+    border: 3;
+    font-size: 25px;
+}
+.boton_fav:hover {
+    box-shadow: 0px 0px 20px 1px rgb(21, 255, 0);
+    transform: scale(1.2) rotate(0deg);
+}
+.boton_fav:active {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1) rotate(0deg);
+    color: rgb(21, 255, 0)
+}
+
+.boton_home{
+    position: relative;
+    right: 500px;
+    top: 24px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: rgb(21, 255, 0);
+    cursor: pointer;
+    font-family: cursive;
+    letter-spacing: 1px;
+    padding: 5px 15px 6px;
+    text-align: center;
+    transition: all 250ms;
+    border-color: rgb(21, 255, 0);
+    box-shadow: 0px 0px 5px 0px rgb(21, 255, 0);
+    border: 3;
+    font-size: 25px;
+}
+.boton_home:hover {
+    box-shadow:  0px 0px 20px 1px rgb(21, 255, 0);
+    transform: scale(1.2) rotate(0deg);
+}
+.boton_home:active {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1) rotate(0deg);
+    color: rgb(21, 255, 0)
+}
+
+.boton_about{
+    position: relative;
+    right: 480px;
+    top: 24px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: rgb(21, 255, 0);
+    cursor: pointer;
+    font-family: cursive;
+    letter-spacing: 1px;
+    padding: 5px 15px 6px;
+    text-align: center;
+    transition: all 250ms;
+    border-color: rgb(21, 255, 0);
+    box-shadow: 0px 0px 5px 0px rgb(21, 255, 0);
+    border: 3;
+    font-size: 25px;
+}
+
+.boton_about:hover {
+    box-shadow: 0px 0px 20px 1px rgb(21, 255, 0);
+    transform: scale(1.2) rotate(0deg);
+}
+.boton_about:active {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1) rotate(0deg);
+    color: rgb(21, 255, 0)
+}
+
+.boton_ran{
+    position: relative;
+    left: 390px;
+    top: 24px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: rgb(21, 255, 0);
+    cursor: pointer;
+    font-family: cursive;
+    letter-spacing: 1px;
+    padding: 5px 15px 6px;
+    text-align: center;
+    transition: all 250ms;
+    border-color: rgb(21, 255, 0);
+    box-shadow: 0px 0px 5px 0px rgb(21, 255, 0);
+    border: 3;
+    font-size: 25px;
+}
+.boton_ran:hover {
+    box-shadow: 0px 0px 20px 1px rgb(21, 255, 0);
+    transform: scale(1.2) rotate(0deg);
+}
+.boton_ran:active {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1) rotate(0deg);
+    color: rgb(21, 255, 0)
+}

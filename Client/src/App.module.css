@@ -1,7 +1,6 @@
 
 .app {
-   
-   background-image: url(../src/img/R.jpeg);
+   background-image: url(./img/rym-gif.gif);
    background-position: center, center;
    background-repeat: no-repeat;
    background-size:cover;
@@ -9,7 +8,7 @@
 }
 
 .login {
-   background-image: url(../src/img/fondo-login.jpg);
+   background-image: url(../src/img/fondo-login-1.jpg);
    background-position: center, center;
    background-repeat: no-repeat;
    background-size:cover;

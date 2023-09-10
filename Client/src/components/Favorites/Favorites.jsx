@@ -1,3 +1,4 @@
+import styles from "../Favorites/Favorites.module.css"
 import React, { useState } from "react";
 import { /*connect*/ useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
@@ -26,8 +27,8 @@ function Favorites() {
   };
 
   return (
-    <div>
-      <h1>FAVORITES</h1>
+    <div className={styles.div}>
+      <h1 className={styles.FAVORITES}>FAVORITES</h1>
 
       <select onChange={handleOrder}>
         <option value="A">Ascendant</option>
@@ -42,7 +43,6 @@ function Favorites() {
         ))}
       </select>
 
-      <div>
         {myFavorites?.map(({ id, name, image, gender, status }) => {
           return (
             <Card
@@ -56,7 +56,6 @@ function Favorites() {
             />
           );
         })}
-      </div>
     </div>
   );
 }

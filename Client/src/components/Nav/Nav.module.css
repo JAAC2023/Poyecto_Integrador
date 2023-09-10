@@ -5,18 +5,17 @@
 
 .nav{
     text-align: center;
-    margin: 0px 50px 0px 50px;
 }
 
 .boton_fav{
     position: relative;
-    right: 520px;
+    right: 500px;
     top: 24px;
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     color: rgb(21, 255, 0);
     cursor: pointer;
-    font-family: cursive;
+    font-family: RickyMorty;
     letter-spacing: 1px;
     padding: 5px 15px 6px;
     text-align: center;
@@ -38,13 +37,13 @@
 
 .boton_home{
     position: relative;
-    right: 500px;
+    right: 480px;
     top: 24px;
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     color: rgb(21, 255, 0);
     cursor: pointer;
-    font-family: cursive;
+    font-family: RickyMorty;
     letter-spacing: 1px;
     padding: 5px 15px 6px;
     text-align: center;
@@ -66,13 +65,13 @@
 
 .boton_about{
     position: relative;
-    right: 480px;
+    right: 460px;
     top: 24px;
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     color: rgb(21, 255, 0);
     cursor: pointer;
-    font-family: cursive;
+    font-family: RickyMorty;
     letter-spacing: 1px;
     padding: 5px 15px 6px;
     text-align: center;
@@ -101,8 +100,8 @@
     border-radius: 10px;
     color: rgb(21, 255, 0);
     cursor: pointer;
-    font-family: cursive;
-    letter-spacing: 1px;
+    font-family: RickyMorty;
+    letter-spacing: 1.5px;
     padding: 5px 15px 6px;
     text-align: center;
     transition: all 250ms;

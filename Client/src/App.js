@@ -1,3 +1,4 @@
+
 import styles from "./App.module.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -9,8 +10,8 @@ import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites.jsx";
 
-const EMAIL = "jaac16@live.com";
-const PASSWORD = "123456";
+// const EMAIL = "jaac16@live.com";
+// const PASSWORD = "123456";
 
 function App() {
 
@@ -25,13 +26,35 @@ function App() {
       // eslint-disable-next-line
    }, [access]);
 
-   function onSearch(id) {
+   // function login({ email, password }) {
+   //    if (email === EMAIL && password === PASSWORD) {
+   //       setAccess(true);
+   //       navigate("/home");
+   //    } else {
+   //       window.alert("Datos incorrectos, el usuario o la contraseña no coinciden");
+   //    }
+   // }
+
+   function login({ email, password }) {
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`)
+      .then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      });
+   }
+
+   const onSearch = (id) => {
       axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(({data}) => {
-         if (data.name) setCharacters([...characters, data]);
-         else window.alert("¡Por favor, ingresa una ID!");
-         }
-      );
+            if (data.name){
+               setCharacters((oldChars) => [...oldChars, data]);
+            } 
+            else {
+               window.alert("¡Por favor, ingresa una ID!")
+            };
+      });
    }
 
    function onClose(id) {
@@ -39,14 +62,7 @@ function App() {
       setCharacters(characterFilter);
    }
 
-   function login({ email, password }) {
-      if (email === EMAIL && password === PASSWORD) {
-         setAccess(true);
-         navigate("/home");
-      } else {
-         window.alert("Datos incorrectos, el usuario o la contraseña no coinciden");
-      }
-   }
+
 //______________________Estilos____________________________
    let estilos = styles.login
 
@@ -56,7 +72,7 @@ function App() {
    return (
       <div className={estilos}>
          {location.pathname !== "/" && <Nav onSearch={onSearch} />}
-
+         
          <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/favorites" element={<Favorites />} />

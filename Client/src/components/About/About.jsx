@@ -1,19 +1,20 @@
+import styles from "../About/About.module.css"
 import foto from "../../img/Yo.jpg"
 
 export default function About () {
 
     return(
-        <div>
-            <h1>ABOUT</h1>
-            <h1>Hola! Mi nombre es Jose Abel</h1>
-            <img src={foto} alt="foto" />
-            <p>Tengo 27 años de edad, estoy en la etapa final de mi juventud 😅, pero aun así no pierdo
-                mi motivación y la alegría de vivir. Apredender constantemente y poner en ptracica el 
-                el nuevo conocimiento adquieirdo es unos de mis hobbies, al igual que viajar y pescar.</p>
-                <p>La programación ha sido para mi el abrebrechas de una nueva etapa que viene en mi vida,
-                    es un tema que encarreta y disfruto mucho, espero llevar el rumbo de mi destino
-                    y los de mi familia a un futuro prospero donde no exista la "necesidad" y sobren las opciones
-                    de poder ayudar a los demas  y por supueto superrame, y se que esto lo lograré con Henry.
+        <div className={styles.div}>
+            <h1 className={styles.ABOUT}>ABOUT</h1>
+            <h1 className={styles.nombre}>Hola! mi nombre es Jose Abel</h1>
+            <img src={foto} alt="foto" className={styles.foto}/>
+            <p className={styles.p}>Tengo 27 años de edad, estoy en la etapa final de mi juventud 😅, pero aun así no pierdo
+                mi motivación y la alegría de vivir. Aprender constantemente y poner en práctica el 
+                nuevo conocimiento adquirido es unos de mis hobbies, al igual que viajar y pescar.
+
+                La programación ha sido para mi la entrada a una nueva etapa que viene en mi vida,
+                es un tema que encarreta y disfruto mucho, espero llevar el rumbo de mi destino
+                y los de mi familia a un futuro próspero donde no exista la "necesidad" y sobren las opciones, y se que esto lo lograré con Henry.
                 </p>
         </div>
         )

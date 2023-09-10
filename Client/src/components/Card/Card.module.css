@@ -13,10 +13,10 @@
     float: left;
     padding: 2% 0% 2.1%;
     width: 15%;
-    margin: -10px 30px 30px;
+    margin: -12px 30px 60px;
     position: relative;
     left: 20px;
-    top: -20px;
+    top: 40px;
     border-radius: 5mm;
 }
 .card:hover{
@@ -45,7 +45,6 @@
     height: 170px;
     margin: -15%;
 }
-
 
 .boton_cerrar {
     z-index: 1;

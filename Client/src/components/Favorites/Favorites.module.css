@@ -1,0 +1,21 @@
+@font-face {
+    font-family: RickyMorty;
+    src: url('../../../Fuente_letra/get_schwifty.ttf');
+}
+
+.div{
+    overflow: hidden;
+    flex-shrink: 5;
+    justify-content: space-around;
+}
+
+.FAVORITES{
+    position: absolute;
+    top: 0px;
+    left: 40%;
+    letter-spacing: 1cqb;
+    font-family: RickyMorty;
+    color:rgb(153, 255, 0);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0),  1px 1px 10px rgb(0, 0, 0);
+    font-size: 40px;
+}

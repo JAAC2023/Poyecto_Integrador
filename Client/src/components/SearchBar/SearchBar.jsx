@@ -14,6 +14,7 @@ export default function SearchBar({onSearch}) {
    const repetido = (id) => {
       setAux(id)
       if (id !== aux) onSearch(id)
+      setId('')
    }
 
    return (

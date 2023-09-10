@@ -4,7 +4,7 @@ export default function Detail({ characters }) {
 
     const {id} = useParams();
     
-    const character = characters.filter(char => char.id === Number(id))[0];
+    const character = characters?.filter(char => char.id === Number(id))[0];
     
     return (
         <div>

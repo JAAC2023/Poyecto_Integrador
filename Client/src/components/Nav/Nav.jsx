@@ -2,8 +2,9 @@ import { NavLink } from "react-router-dom";
 import styles from "./Nav.module.css"
 import SearchBar from "../SearchBar/SearchBar";
 
-export default function Nav({ onSearch }) {
 
+export default function Nav({ onSearch }) {
+  
   const idRandom = Math.floor((Math.random()*825)+1)
 
   return (

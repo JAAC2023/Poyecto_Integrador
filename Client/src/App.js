@@ -35,26 +35,56 @@ function App() {
    //    }
    // }
 
-   function login({ email, password }) {
-      const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`)
-      .then(({ data }) => {
+   //!______________________EXPRESS___________________________
+
+   // function login({ email, password }) {
+   //    const URL = 'http://localhost:3001/rickandmorty/login/';
+   //    axios(URL + `?email=${email}&password=${password}`)
+   //    .then(({ data }) => {
+   //       const { access } = data;
+   //       setAccess(data);
+   //       access && navigate('/home');
+   //    });
+   // }
+
+   // const onSearch = (id) => {
+   //    axios(`http://localhost:3001/rickandmorty/character/${id}`)
+   //    .then(({data}) => {
+   //          if (data.name){
+   //             setCharacters((oldChars) => [...oldChars, data]);
+   //          } 
+   //          else {
+   //             window.alert("¡Por favor, ingresa una ID!")
+   //          };
+   //    });
+   // }
+
+   //!______________________ASYNC AWAIT_________________________
+
+   const login = async ({ email, password }) => {
+      try {
+         const URL = 'http://localhost:3001/rickandmorty/login/';
+         const { data } = await axios (URL + `?email=${email}&password=${password}`);
          const { access } = data;
          setAccess(data);
          access && navigate('/home');
-      });
+      } catch (error) {
+         window.alert (error)
+      }
+      
    }
 
-   const onSearch = (id) => {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then(({data}) => {
+   const onSearch = async (id) => {
+      try {
+         const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
             if (data.name){
-               setCharacters((oldChars) => [...oldChars, data]);
+               setCharacters((char) => [...char, data]);
             } 
-            else {
-               window.alert("¡Por favor, ingresa una ID!")
-            };
-      });
+      } catch (error) {
+         window.alert ("No existe personaje")
+      }
+      
+      
    }
 
    function onClose(id) {

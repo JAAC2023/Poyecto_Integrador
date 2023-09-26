@@ -17,5 +17,5 @@ export default function About () {
                 y los de mi familia a un futuro próspero donde no exista la "necesidad" y sobren las opciones, y se que esto lo lograré con Henry.
                 </p>
         </div>
-        )
+    )
 }

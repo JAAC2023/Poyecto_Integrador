@@ -6,11 +6,8 @@ import { removeFav, filterCards, orderCards } from "../../Redux/action";
 
 function Favorites() {
   const genders = ["Genders", "Male", "Female", "Genderless", "unknown"];
-
   const [aux, setAux] = useState(false);
-
   const dispatch = useDispatch();
-
   const myFavorites = useSelector((state) => state.myFavorites);
 
   const removeFavorite = (id) => {
@@ -27,8 +24,8 @@ function Favorites() {
   };
 
   return (
-    <div className={styles.div}>
-      <h1 className={styles.FAVORITES}>FAVORITES</h1>
+    <div className={styles.favoritos}>
+      <h1 className={styles.titulo}>FAVORITES</h1>
 
       <select onChange={handleOrder}>
         <option value="A">Ascendant</option>
@@ -42,6 +39,7 @@ function Favorites() {
           </option>
         ))}
       </select>
+        
 
         {myFavorites?.map(({ id, name, image, gender, status }) => {
           return (

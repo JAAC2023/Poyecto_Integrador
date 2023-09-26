@@ -43,6 +43,9 @@ function Card({ id, name, image, gender, status, onClose }) {
             : <button 
             onClick={handleFavorite}
             className={styles.boton_Fav}>🤍</button>) : ""}
+
+            {location.pathname === "/favorites" ? (
+            <button className={styles.boton_Fav_solo}>❤️</button>) : ""}
          
          <button 
          onClick={() => onClose(id)} 

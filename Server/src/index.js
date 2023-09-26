@@ -1,7 +1,14 @@
-const express = require("express");
+//const express = require("express");
+require('dotenv').config();
+const { SERVER_PORT } = process.env;
 const server = require('./app')
-const PORT = 3001;
+const { conn } = require("./DB_connection")
 
-server.listen(PORT, () => {
-    console.log(`Servidor se esta leyendo en el puerto: ${PORT}`);
-});
+conn.sync({ force: true})
+.then(() => {
+    server.listen(SERVER_PORT, () => {
+    console.log(`Servidor leyendose en el puerto: ${SERVER_PORT}`);
+    });
+})
+.catch(err => window.alert(err.message))
+

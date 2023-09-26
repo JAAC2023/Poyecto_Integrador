@@ -58,7 +58,7 @@
     background-color: rgb(186, 246, 96);
 }
 .boton_cerrar:hover {
-    background-color: greenyellow;
+    background-color: rgb(153, 255, 0);
     box-shadow: 1px 1px 10px 1px greenyellow;
     cursor: pointer;
 }
@@ -75,9 +75,21 @@
     background-color: rgb(186, 246, 96);
 }
 .boton_Fav:hover {
-    background-color: greenyellow;
+    background-color: rgb(153, 255, 0);
     box-shadow: 1px 1px 10px 1px greenyellow;
     cursor: pointer;
+}
+
+.boton_Fav_solo{
+    z-index: 1;
+    position: relative;
+    top: 9px;
+    right: 67px;
+    font-size: 20px;
+    border-radius: 5mm 0mm;
+    padding: 2px;
+    width: 35px;
+    background-color: rgb(186, 246, 96);
 }
 
 

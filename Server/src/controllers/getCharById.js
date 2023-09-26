@@ -21,8 +21,6 @@ const getCharById = async (req, res) => {
 
 module.exports = getCharById;
 
-
-
 //!     EXPRESS
 
 // const axios = require ('axios');

@@ -1,0 +1,40 @@
+.detail{
+    overflow: hidden;
+    flex-shrink: 5;
+}
+
+.titulo{
+    position: absolute;
+    top: 0px;
+    left: 40%;
+    letter-spacing: 1cqb;
+    font-family: RickyMorty;
+    color:rgb(153, 255, 0);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0),  1px 1px 10px rgb(0, 0, 0);
+    font-size: 40px;
+}
+
+.texto{
+    text-align: justify;
+    position: absolute;
+    top: 139px;
+    left: 137mm;
+    background-color: rgba(163, 163, 163, 0.747);
+    font-family: monospace;
+    padding:0mm 20mm 0mm 3mm;
+    width:50%;
+    border-radius: 0% 2em 2em 0%;
+    font-size: 130%;
+}
+
+.imagen{
+    position: absolute;
+    top: 125px;
+    left: 5%;
+    width: 32%;
+    padding: 1% 57% 1% 1%;
+    border-radius: 3em;
+    box-shadow: 1px 1px 10px rgb(145, 255, 0),  1px 1px 10px rgb(0, 255, 0)
+}
+
+

@@ -3,12 +3,13 @@ import styles from "./Nav.module.css"
 import SearchBar from "../SearchBar/SearchBar";
 
 
-export default function Nav({ onSearch }) {
+export default function Nav({ onSearch, logOut }) {
   
   const idRandom = Math.floor((Math.random()*825)+1)
 
   return (
     <div className={styles.nav}>
+
       <button className={styles.boton_ran} onClick={() => onSearch(idRandom)}>Random</button>
 
       <NavLink to="/favorites">
@@ -23,7 +24,10 @@ export default function Nav({ onSearch }) {
         <button className={styles.boton_about}>About</button>
       </NavLink>
 
+      <button className={styles.boton_logOut} onClick={logOut}>🔒</button>
+      
       <SearchBar onSearch={onSearch} />
+
     </div>
   );
 }

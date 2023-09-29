@@ -1,8 +1,8 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
-const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
-const UserModel = require("./models/User");
-const FavoritesModel = require("./models/Favorite");
+const { DB_USER, DB_PASSWORD, DB_HOST, DDB } = process.env;
+const userModel = require("./models/User");
+const favoritesModel = require("./models/Favorite");
 
 // EJERCICIO 03
 // A la instancia de Sequelize le falta la URL de conexión. ¡Agrégala!
@@ -11,7 +11,7 @@ const FavoritesModel = require("./models/Favorite");
 // URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
 const baseDeDatos = new Sequelize(
    // URL
-   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/rickandmorty`,
+   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DDB}`,
    { logging: false, native: false }
 );
 
@@ -20,8 +20,8 @@ const baseDeDatos = new Sequelize(
 
 //
 
-UserModel(baseDeDatos);
-FavoritesModel(baseDeDatos);
+userModel(baseDeDatos);
+favoritesModel(baseDeDatos);
 
 //
 
@@ -30,7 +30,7 @@ FavoritesModel(baseDeDatos);
 const { User, Favorite } = baseDeDatos.models;
 
 User.belongsToMany(Favorite, {through: "user_favorite"})
-Favorite.belongsToMany(User,{through: "user_favorite"})
+Favorite.belongsToMany(User, {through: "user_favorite"})
 
 module.exports = {
    User,

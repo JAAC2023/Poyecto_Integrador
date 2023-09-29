@@ -3,16 +3,16 @@
     src: url('../../../Fuente_letra/get_schwifty.ttf');
 }
 
-.cards{
-    overflow: hidden;
-    flex-shrink: 5;
-    justify-content: space-around;
-}
-
 .HOME{
+    padding: 0% 0% 0% 0.7%;
+    
+    background: rgba(255, 255, 255, 0.5); /* Fondo semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    backdrop-filter: blur(1px); /* Efecto de desenfoque */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
     position: absolute;
-    top: 0px;
-    left: 44%;
+    top: -6px;
+    left: 43%;
     letter-spacing: 1cqb;
     font-family: RickyMorty;
     color:rgb(153, 255, 0);

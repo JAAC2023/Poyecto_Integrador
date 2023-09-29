@@ -1,40 +1,32 @@
 import styles from "../Card/Card.module.css"
 import { NavLink, useLocation } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect } from "react"; //React.useState
+import { useDispatch } from "react-redux";
+import { useState } from "react"; //React.useState
 import { addFav, removeFav } from "../../Redux/action";
 
-function Card({ id, name, image, gender, status, onClose }) {
+function Card({ id, name, image, gender, status, species, origin, onClose }) {
 
    const [isFav, setIsFav] = useState(false);
    const location = useLocation();
    const dispatch = useDispatch();
-   const myFavorites = useSelector((state) => state.myFavorites);
-   const removeFavorite = id => dispatch(removeFav(id));
-   const addFavorite = character => dispatch(addFav(character));
+   const removeFavorite = (id) => dispatch(removeFav(id));
+   const addFavorite = (character) => dispatch(addFav(character));
 
    const handleFavorite = () => {
       if (isFav) {
          removeFavorite(id);
          setIsFav(false);
       } else {
-         addFavorite({ id, name, image, gender, status });
+         addFavorite({ id, name, image, gender, status, species, origin, });
          setIsFav(true);
       }
    };
 
-   useEffect(() => {
-      myFavorites?.forEach((fav) => {
-         if (fav.id === id) setIsFav(true);
-      });
-   // eslint-disable-next-line
-   }, [myFavorites]);
-
    return (
       <div id={id} className={styles.card}>
 
-            <h1 className={styles.id}>{id}</h1>
-            <h1 className={styles.nombre}>{name}</h1>
+         <h1 className={styles.id}>{id}</h1>
+         <h1 className={styles.nombre}>{name}</h1>
 
          {location.pathname === "/home" ? (
             isFav ? <button 
@@ -44,7 +36,7 @@ function Card({ id, name, image, gender, status, onClose }) {
             onClick={handleFavorite}
             className={styles.boton_Fav}>🤍</button>) : ""}
 
-            {location.pathname === "/favorites" ? (
+         {location.pathname === "/favorites" ? (
             <button className={styles.boton_Fav_solo}>❤️</button>) : ""}
          
          <button 

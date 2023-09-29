@@ -1,7 +1,7 @@
 import styles from "../Form/Form.module.css"
 import { useState } from "react";
 import validation from "../../utils/validation";
-import gif from "../../img/ezgif.com-optimize.gif"
+import gif from "../../img/portal.gif"
 
 export default function Form({ login }) {
     

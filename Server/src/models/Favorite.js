@@ -2,10 +2,11 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (baseDeDatos) => {
    baseDeDatos.define('Favorite', {
-      id: {
+      id:{
          type: DataTypes.INTEGER,
-         allowNull: false,
-         primaryKey: true
+         allowNull: true,
+         primaryKey: true,
+         //autoIncrement: true,
       },
       name: {
          type: DataTypes.STRING,
@@ -13,8 +14,8 @@ module.exports = (baseDeDatos) => {
       },
       status: {
          type: DataTypes.ENUM('Alive', 'Dead', 'unknown'),
-         defaultValue: 'Alive',
          allowNull: false,
+         defaultValue: 'unknown',
       },
       species: {
          type: DataTypes.STRING,
@@ -23,6 +24,7 @@ module.exports = (baseDeDatos) => {
       gender: {
          type: DataTypes.ENUM('Female', 'Male', 'Genderless', 'unknown'),
          allowNull: false,
+         defaultValue: 'unknown',
       },
       origin: {
          type: DataTypes.STRING,

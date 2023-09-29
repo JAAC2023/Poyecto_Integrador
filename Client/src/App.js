@@ -22,17 +22,8 @@ function App() {
       // eslint-disable-next-line
    }, [access]);
 
-   // function login({ email, password }) {
-   //    if (email === EMAIL && password === PASSWORD) {
-   //       setAccess(true);
-   //       navigate("/home");
-   //    } else {
-   //       window.alert("Datos incorrectos, el usuario o la contraseña no coinciden");
-   //    }
-   // }
-
    
-   //!______________________ASYNC AWAIT_________________________
+   //_______________________ASYNC AWAIT_________________________
    
    const login = async ({ email, password }) => {
       try {
@@ -44,6 +35,10 @@ function App() {
       } catch (error) {
          window.alert (error)
       }
+   }
+   
+   function logOut() {
+      navigate("/")
    }
    
    const onSearch = async (id) => {
@@ -62,6 +57,8 @@ function App() {
       setCharacters(characterFilter);
    }
 
+   
+
       
       //______________________Estilos____________________________
       let estilos = styles.login
@@ -71,7 +68,8 @@ function App() {
       
    return (
       <div className={estilos}>
-         {location.pathname !== "/" && <Nav onSearch={onSearch} />}
+         
+         {location.pathname !== "/" && <Nav onSearch={onSearch} logOut={logOut} />}
          
          <Routes>
             <Route path="/about" element={<About />} />
@@ -85,6 +83,8 @@ function App() {
 }
 
 export default App;
+
+
 
          //!______________________EXPRESS___________________________
       
@@ -109,3 +109,12 @@ export default App;
          //          };
          //    });
          // }
+
+         // function login({ email, password }) {
+   //    if (email === EMAIL && password === PASSWORD) {
+   //       setAccess(true);
+   //       navigate("/home");
+   //    } else {
+   //       window.alert("Datos incorrectos, el usuario o la contraseña no coinciden");
+   //    }
+   // }

@@ -4,7 +4,7 @@ import axios from "axios"
 import { useState, useEffect } from "react";
 
 
-export default function Detail({ characters }) {
+export default function Detail() {
 
     const { id } = useParams();
     

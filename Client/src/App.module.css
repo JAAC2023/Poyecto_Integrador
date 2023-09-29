@@ -5,6 +5,8 @@
    background-repeat: no-repeat;
    background-size:cover;
    height: 100vh;
+   overflow: auto;
+   background-attachment:unset;
 }
 
 .login {

@@ -1,5 +1,5 @@
 import styles from "../Favorites/Favorites.module.css"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { /*connect*/ useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
 import { removeFav, filterCards, orderCards } from "../../Redux/action";
@@ -27,21 +27,21 @@ function Favorites() {
     <div className={styles.favoritos}>
       <h1 className={styles.titulo}>FAVORITES</h1>
 
-      <select onChange={handleOrder}>
-        <option value="A">Ascendant</option>
-        <option value="D">Falling</option>
+      <select className={styles.acendente} onChange={handleOrder}>
+        <option className={styles.opcion} value="A">🚩... Ascendent</option>
+        <option className={styles.opcion} value="D">🚩... Descendent</option>
       </select>
 
-      <select onChange={handleFilter}>
+      <select className={styles.genders} onChange={handleFilter}>
         {genders.map((option) => (
-          <option key={option} value={option}>
-            {option}
+          <option className={styles.opcion} key={option} value={option}>
+            🚩... {option}
           </option>
         ))}
       </select>
         
 
-        {myFavorites?.map(({ id, name, image, gender, status }) => {
+        {myFavorites?.map(({ id, name, image, gender, status, species, origin }) => {
           return (
             <Card
               key={id}
@@ -50,6 +50,8 @@ function Favorites() {
               image={image}
               gender={gender}
               status={status}
+              species={species}
+              origin={origin}
               onClose={() => removeFavorite(id)}
             />
           );

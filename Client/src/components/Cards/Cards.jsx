@@ -4,10 +4,10 @@ import Card from "../Card/Card";
 export default function Cards({ characters, onClose }) {
 
    return (
-      <div className={styles.cards}>
+      <div>
          <h1 className={styles.HOME}>HOME</h1>
          
-         {characters?.map(({ id, name, image, gender, status }) => (
+         {characters?.map(({ id, name, image, gender, status, species, origin }) => (
          <Card
             key={id}
             id={id}
@@ -15,6 +15,8 @@ export default function Cards({ characters, onClose }) {
             image={image}
             gender={gender}
             status={status}
+            species={species}
+            origin={origin}
             onClose={onClose}
          />
          ))}

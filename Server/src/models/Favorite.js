@@ -6,7 +6,11 @@ module.exports = (baseDeDatos) => {
          type: DataTypes.INTEGER,
          allowNull: true,
          primaryKey: true,
-         //autoIncrement: true,
+         autoIncrement: true,
+      },
+      idUUID:{
+         type: DataTypes.STRING,
+         defaultValue: DataTypes.UUIDV4,
       },
       name: {
          type: DataTypes.STRING,

@@ -19,6 +19,7 @@ function Card({ id, name, image, gender, status, species, origin, onClose }) {
       } else {
          addFavorite({ id, name, image, gender, status, species, origin, });
          setIsFav(true);
+         
       }
    };
 
@@ -34,10 +35,9 @@ function Card({ id, name, image, gender, status, species, origin, onClose }) {
             className={styles.boton_Fav}>❤️</button>
             : <button 
             onClick={handleFavorite}
-            className={styles.boton_Fav}>🤍</button>) : ""}
-
-         {location.pathname === "/favorites" ? (
-            <button className={styles.boton_Fav_solo}>❤️</button>) : ""}
+            className={styles.boton_Fav}>🤍</button>) 
+            : <button className={styles.boton_Fav_solo}>❤️</button> 
+         }
          
          <button 
          onClick={() => onClose(id)} 

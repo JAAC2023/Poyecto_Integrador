@@ -33,7 +33,10 @@ function App() {
          setAccess(data);
          access && navigate('/home');
       } catch (error) {
-         window.alert (error)
+         const { message } = error
+         if (message.includes(404)) window.alert("Usuario NO encontrado")
+         if (message.includes(403)) window.alert("Contraseña incorrecta")
+         if (message.includes(400)) window.alert("Faltan datos")
       }
    }
    

@@ -86,7 +86,7 @@
     padding: 0 18px;
     line-height: 50px;
     text-align: center;
-    
+    margin-left: 2rem;
 }
 
 .submit:hover {
@@ -98,7 +98,7 @@
     background-color: green;
 }
 
-.sign{
+.back{
   position: relative;
   top: 95mm;
   left: 92mm;
@@ -113,15 +113,14 @@
   padding: 0 18px;
   line-height: 50px;
   text-align: center;
-  margin-left: 2rem;
 }
 
-.sign:hover {
+.back:hover {
   background-color: greenyellow;
   box-shadow: 1px 1px 10px 1px greenyellow;
 }
 
-.sign:active {
+.back:active {
   background-color: green;
 }
 

@@ -1,10 +1,10 @@
-import styles from "../Form/Form.module.css"
+import styles from "../Form/FormRegistrer.module.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import validation from "../../utils/validation";
 import gif from "../../img/portal.gif"
 
-export default function Form({ login }) {
+export default function FormRegistrer({ postUser }) {
 
   const navigate = useNavigate();
     
@@ -20,19 +20,31 @@ export default function Form({ login }) {
         setErrors(validation({ ...userData, [name]: value }));
     };
 
+    console.log(errors.email);
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        login(userData);
+        if (
+          errors.email === "Debe ser un email valido" ||
+          errors.email === "Debe tener menos de 35 caracteres" ||
+          errors.password === "Debe tener una longitud entre 6 y 10 caracteres"||
+          errors.password === "Debe contener al menos un numero"
+      ) {
+          window.alert("Algo anda mal");
+      } else {
+          postUser(userData);
+      }
     };
 
-    const registrer = () => {
-      navigate("/registrer")
+    
+    const login = () => {
+      navigate("/")
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <div className={styles.form}>
-                <h className={styles.signin}>SIGN IN</h>
+                <h className={styles.signin}>SIGN UP</h>
                 <label className={styles.labelEmail}>Email</label>
                 <input
                     className={styles.email}
@@ -54,8 +66,8 @@ export default function Form({ login }) {
                 />
                 {errors.password ? <p className={styles.error_Pass} >{errors.password}</p> : <p className={styles.error_Pass}>...</p>}
             </div>
-            <button className={styles.submit} type="submit">LOGIN</button>
-            <button className={styles.sign} type="button" onClick={registrer}>sign up</button>
+            <button className={styles.back} type="button" onClick={login}>back</button>
+            <button className={styles.submit} type="submit">submit</button>
 
             <img className={styles.gif} src={gif} alt="" />
         </form>

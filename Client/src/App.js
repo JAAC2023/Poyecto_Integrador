@@ -7,6 +7,7 @@ import Cards from "./components/Cards/Cards.jsx";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
+import FormRegistrer from "./components/Form/FormRegistrer.jsx";
 import Favorites from "./components/Favorites/Favorites.jsx";
 
 function App() {
@@ -24,6 +25,19 @@ function App() {
 
    
    //_______________________ASYNC AWAIT_________________________
+
+   const postUser = async ({ email, password }) => {
+    try {
+       const { data } = await axios.post(`http://localhost:3001/rickandmorty/loginPost/`, {
+       email: email,
+       password: password
+   });
+
+    window.alert (data.message);
+    } catch (error) {
+      window.alert(error.response.data);
+    }
+ }
    
    const login = async ({ email, password }) => {
       try {
@@ -42,6 +56,7 @@ function App() {
    
    function logOut() {
       navigate("/")
+      setAccess(false)
    }
    
    const onSearch = async (id) => {
@@ -60,24 +75,23 @@ function App() {
       setCharacters(characterFilter);
    }
 
-   
-
       
       //______________________Estilos____________________________
       let estilos = styles.login
       
-      if (location.pathname !== '/') estilos = styles.app
+      if (location.pathname !== '/' && location.pathname !== '/registrer') estilos = styles.app
       //_________________________________________________________
       
    return (
       <div className={estilos}>
          
-         {location.pathname !== "/" && <Nav onSearch={onSearch} logOut={logOut} />}
+         {location.pathname !== "/" && location.pathname !== '/registrer'&& <Nav onSearch={onSearch} logOut={logOut} />}
          
          <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/" element={<Form login={login} />} />
+            <Route path="/registrer" element={<FormRegistrer postUser={postUser} />} />
             <Route path="/detail/:id" element={<Detail characters={characters}/>}/>
             <Route path="/home" element={<Cards characters={characters} onClose={onClose} />}/>
          </Routes>

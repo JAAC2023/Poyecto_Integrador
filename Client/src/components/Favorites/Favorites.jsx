@@ -25,7 +25,7 @@ function Favorites() {
 
   return (
     <div className={styles.favoritos}>
-      <h1 className={styles.titulo}>FAVORITES</h1>
+      <h1 className={styles.titulo}>FAVO  RITES</h1>
 
       <select className={styles.acendente} onChange={handleOrder}>
         <option className={styles.opcion} value="A">🚩... Ascendent</option>
